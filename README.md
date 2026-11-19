@@ -13,6 +13,17 @@ npm run build      # статика в dist/ — её и выкладываем 
 npm run preview
 ```
 
+## Выкладка
+
+```bash
+./deploy.sh        # сборка на Mac и rsync dist/ на сервер (ssh elvane)
+```
+
+Файлы лежат в `/home/elvane/web/elvane.cloud/public_html/site`. Nginx (шаблон
+`elvane_backend/deploy/hestia/elvane.stpl`) сначала ищет файл лендинга, а всё остальное
+(`/v1`, короткие ссылки `/c/ /i/ /a/ /h/ /p/`) отдаёт API. Скрипт в конце проверяет, что
+`/` — это лендинг, а `/v1/health` отвечает.
+
 ## Идея
 
 Страница — это подъём. Сверху вы стоите у начала тропы (1 717 м), каждая секция — отметка на пути,
